@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
+import 'data/product_data.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var liste = await urunleriYukle();
+  debugPrint('ürün sayısı: ${liste.length}');
   runApp(const MyApp());
 }
 
