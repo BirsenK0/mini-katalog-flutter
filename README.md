@@ -1,17 +1,23 @@
-# mini_katalog
+# Mini Katalog
 
-A new Flutter project.
+Flutter ile yaptığım basit bir ürün katalog uygulaması. Ürünler assets
+klasöründeki JSON dosyasından okunuyor. Listede arama yapılabiliyor,
+karta tıklayınca ürün detayı açılıyor ve ürünler sepete eklenebiliyor.
 
-## Getting Started
+## Flutter sürümü
 
-This project is a starting point for a Flutter application.
+Flutter 3.47.7
 
-A few resources to get you started if this is your first Flutter project:
+## Çalıştırma
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+1. Repoyu indir: `git clone https://github.com/BirsenK0/mini-katalog-flutter.git`
+2. Klasöre gir: `cd mini-katalog-flutter`
+3. Paketleri yükle: `flutter pub get`
+4. Çalıştır: `flutter run`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Ekran görüntüleri
+
+![Ana sayfa](screenshots/ana_sayfa.png)
+![Ürün detayı](screenshots/detay.png)
+![Sepet](screenshots/sepet.png)
+![Boş sepet](screenshots/sepet_bos.png)
