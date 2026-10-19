@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/cart.dart';
 import '../data/product_data.dart';
 import '../models/product.dart';
 import '../widgets/product_card.dart';
@@ -47,6 +48,22 @@ class _HomePageState extends State<HomePage> {
           'Mini Katalog',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        actions: [
+          // sepete gidip dönünce sayı güncellensin diye setState çağırıyoruz
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                '/sepet',
+              ).then((_) => setState(() {}));
+            },
+            child: Text(
+              'Sepet (${sepet.length})',
+              style: const TextStyle(color: Color(0xFF222222)),
+            ),
+          ),
+          const SizedBox(width: 8),
+        ],
       ),
       body: Column(
         children: [
@@ -108,7 +125,17 @@ class _HomePageState extends State<HomePage> {
       ),
       itemCount: gorunenler.length,
       itemBuilder: (context, index) {
-        return ProductCard(urun: gorunenler[index]);
+        return ProductCard(
+          urun: gorunenler[index],
+          onTap: () {
+            // ürünü detay sayfasına argüman olarak gönderiyoruz
+            Navigator.pushNamed(
+              context,
+              '/detay',
+              arguments: gorunenler[index],
+            ).then((_) => setState(() {}));
+          },
+        );
       },
     );
   }

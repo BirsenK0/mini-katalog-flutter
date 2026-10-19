@@ -5,15 +5,14 @@ import '../models/product.dart';
 // listedeki tek bir ürün kartı
 class ProductCard extends StatelessWidget {
   final Product urun;
+  final VoidCallback onTap; // tıklanınca ne olacağını ana sayfa söylüyor
 
-  const ProductCard({super.key, required this.urun});
+  const ProductCard({super.key, required this.urun, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // detay sayfasına geçişi sonraki adımda yazacağız
-      },
+      onTap: onTap,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
